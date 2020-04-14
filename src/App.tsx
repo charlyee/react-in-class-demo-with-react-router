@@ -17,7 +17,7 @@ export default class App extends React.Component<IAppProps> {
   public render() {
     return (
       <Fragment>
-        <NavBar/>
+        <NavBar />
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route exact path='/activities' component={ActivityDashboard} />

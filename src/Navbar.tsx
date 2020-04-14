@@ -35,7 +35,7 @@ export default class NavBar extends React.Component<INavBarProps> {
 
                 <Menu.Item
                     as={Link}
-                    to={`/23484h0rhw0e8rfbwne0fnbads0fshfb0p42jpias09idashj0dsa`}
+                    to={`/fsdsdffsdsdf23484h0rhw0e8rfbwne0fnbads0fshfb0p42jpias09idashj0dsa`}
                     name='otherpage'
                 >
                     Broken Link Page
