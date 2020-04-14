@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import { Fragment } from 'react';
+import HomePage from './HomePage';
+import { Route, Switch } from "react-router-dom";
+import NotFound from './NotFound';
+import ActvityDetails from './ActivityDetails';
+import ActivityDashboard from './ActivityDashboard';
+import NavBar from './Navbar';
+import Page1 from './Page1';
+import Page2 from './Page2';
+import Page3 from './Page3';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export interface IAppProps {
 }
 
-export default App;
+export default class App extends React.Component<IAppProps> {
+  public render() {
+    return (
+      <Fragment>
+        <NavBar/>
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+          <Route exact path='/activities' component={ActivityDashboard} />
+          <Route path='/activities/:id' component={ActvityDetails} />
+          <Route path='/page1' component={Page1} />
+          <Route path='/page2' component={Page2} />
+          <Route path='/page3' component={Page3} />
+          <Route component={NotFound} />
+        </Switch>
+      </Fragment>
+    );
+  }
+}
